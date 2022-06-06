@@ -1,0 +1,254 @@
+:root {
+  --color-green-50: #f0fff4;
+  --color-green-100: #c6f6d5;
+  --color-green-200: #9ae6b4;
+  --color-green-300: #68d391;
+  --color-green-400: #48bb78;
+  --color-green-500: #38a169;
+  --color-green-600: #2f855a;
+  --color-green-700: #276749;
+  --color-green-800: #22543d;
+  --color-green-900: #1c4532;
+}
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input {
+  padding: 0px 5px;
+  text-align: center;
+}
+
+.todo {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s;
+}
+
+.todo:hover {
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.25);
+}
+
+.todo--completed {
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.25);
+  text-decoration: line-through;
+  background-color: rgba(223, 220, 220, 0.864);
+}
+
+.todo__label {
+  display: flex;
+  padding-left: 80px;
+  align-items: center;
+}
+
+.todo__checkbox {
+  position: absolute;
+  -webkit-appearance: none;
+}
+
+.custom-checkbox {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin-left: -70px;
+  margin-top: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.1em var(--color-green-500);
+  transition: all 0.2s;
+}
+
+.todo__checkbox:checked {
+  background-image: url(./images/checked.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  padding: 10px;
+}
+
+.todo__checkbox:hover {
+  box-shadow: 0 0 0 0.1em var(--color-green-500),
+    0 5px 5px var(--color-green-500);
+}
+
+.todo__date {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.button {
+  cursor: pointer;
+  border: none;
+  background: var(--color-green-400);
+  color: white;
+  min-width: max-content;
+  padding: 8px 32px;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background: var(--color-green-300);
+}
+
+.button:active {
+  background: var(--color-green-500);
+}
+
+.button--red {
+  border: 2px solid rgba(255, 60, 60, 0.676);
+  background: none;
+  background-image: url(./images/trash.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  border-radius: 50%;
+  padding: 20px;
+  margin-top: 10px;
+}
+
+.button--red:hover {
+  animation: swing 0.5s ease;
+  animation-iteration-count: 1;
+}
+
+@keyframes swing {
+  15% {
+    transform: translateX(5px);
+  }
+  30% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  65% {
+    transform: translateX(-3px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.button--red:active {
+  background-color: rgba(132, 43, 43, 0.676);
+}
+
+.edit-button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  background-image: url(./images/edit.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 20px;
+  height: 30px;
+  width: 30px;
+  transition: all 0.2s;
+}
+
+.button-ok {
+  border: none;
+  background-image: url(./images/checked.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-size: 20px;
+  padding: 12px;
+  border: 1px solid gray;
+  border-radius: 0px 3px 3px 0px;
+  border-left: 1px solid rgba(198, 198, 198, 0.318);
+  margin-top: 20px;
+  vertical-align: middle;
+}
+
+.button__clear {
+  cursor: pointer;
+  border: 1px solid gray;
+  border-radius: 0px 3px 3px 0px;
+  border-left: 1px solid rgba(198, 198, 198, 0.318);
+  background: none;
+  background-image: url(./images/clear.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 15px;
+  height: 40px;
+  width: 40px;
+  transition: all 0.2s;
+}
+
+.input__common {
+  display: flex;
+}
+
+.todo-app {
+  margin: 0 auto;
+  max-width: 832px;
+  padding: 16px;
+}
+
+.header {
+  display: block;
+}
+
+.header__input,
+.header__input-search {
+  width: 100%;
+  border: 1px solid gray;
+  border-radius: 3px 0px 0px 3px;
+  border-right: none;
+  border-right: none;
+}
+
+.todo-list {
+  margin-top: 32px;
+}
+
+.todo {
+  margin-top: 16px;
+}
+
+.todo__row {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.todo__label {
+  width: 100%;
+}
+
+.header__row {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.edit__input {
+  margin-top: 20px;
+  margin-left: 80px;
+  vertical-align: middle;
+}
+
+input {
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 3px 0px 0px 3px;
+  border-right: none;
+  border-right: none;
+}
+
+.noresults{
+  text-align: center;
+}
